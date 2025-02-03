@@ -1,4 +1,4 @@
-from data_provider.data_loader import Dataset_ETT_hour, Dataset_ETT_minute, Dataset_Custom
+from data_provider.data_loader import Dataset_ETT_hour, Dataset_ETT_minute, Dataset_Custom, Dataset_ECG
 from data_provider.uea import collate_fn
 from torch.utils.data import DataLoader
 from data_provider.data_large_loader import DataloaderLarge
@@ -13,6 +13,9 @@ data_dict = {
     'Exchange': Dataset_Custom,
     'Weather': Dataset_Custom,
     'ECL': Dataset_Custom,
+    'ptb': Dataset_ECG,
+    'chapman': Dataset_ECG,
+    'ptbxl': Dataset_ECG,
     'TSLD-0.5G': [DataloaderLarge, DataloaderLargeSingle],
     'TSLD-1G': [DataloaderLarge, DataloaderLargeSingle]
 }

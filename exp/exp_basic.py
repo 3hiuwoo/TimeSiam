@@ -1,6 +1,6 @@
 import os
 import torch
-from models import iTransformer, PatchTST
+from models import iTransformer, PatchTST, TCN
 
 
 class Exp_Basic(object):
@@ -9,6 +9,7 @@ class Exp_Basic(object):
         self.model_dict = {
             'PatchTST': PatchTST,
             'iTransformer': iTransformer,
+            'TCN': TCN
         }
         self.device = self._acquire_device()
         self.model = self._build_model().to(self.device)

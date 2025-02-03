@@ -221,11 +221,13 @@ class Exp_Pretrain_TimeSiam(Exp_Basic):
                 min_vali_loss = vali_loss
                 encoder_ckpt = {'epoch': epoch, 'model_state_dict': self.model.state_dict()}
                 torch.save(encoder_ckpt, os.path.join(path, "ckpt_best.pth"))
+                torch.save(self.model.encoder.state_dict(), os.path.join(path, "encoder_best.pth"))
 
             if (epoch + 1) % 5 == 0:
                 print("Saving model at epoch {}...".format(epoch + 1))
                 encoder_ckpt = {'epoch': epoch, 'model_state_dict': self.model.state_dict()}
                 torch.save(encoder_ckpt, os.path.join(path, f"ckpt{epoch + 1}.pth"))
+                torch.save(self.model.encoder.state_dict(), os.path.join(path, f"encoder{epoch + 1}.pth"))
 
     def pretrain_one_epoch(self, train_loader, model_optim, model_scheduler):
 
