@@ -15,7 +15,7 @@ from sklearn.preprocessing import StandardScaler
 import random
 from statsmodels.tsa.stattools import adfuller
 import math
-from data import load_data as load_ecg_data
+from data_provider.data import load_data as load_ecg_data
 warnings.filterwarnings('ignore')
 
 

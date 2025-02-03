@@ -8,7 +8,7 @@ os.environ['CUDA_LAUNCH_BLOCKING'] = '0'
 
 parser = argparse.ArgumentParser(description='TimeSiam')
 
-parser.add_argument('--seed', type=int, default=2023, help='seed')
+parser.add_argument('--seed', type=int, default=42, help='seed')
 
 # basic config
 parser.add_argument('--task_name', type=str, required=True, default='in_domain', help='task name, options:[in_domain, cross_domain]')
