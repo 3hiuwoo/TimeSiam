@@ -15,7 +15,7 @@ python -u run.py \
     --data_path $data_path \
     --model_id $data_path \
     --model $model_name \
-    --data Traffic \
+    --data $data_path \
     --features M \
     --seq_len $pretrain_seq_len \
     --e_layers 10 \
