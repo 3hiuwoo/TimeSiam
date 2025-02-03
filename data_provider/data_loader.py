@@ -475,11 +475,10 @@ class Dataset_ECG(Dataset):
             r_begin = s_end - self.label_len
             r_end = r_begin + self.label_len + self.pred_len
 
-        print(s_end-s_begin, r_end-r_begin)
         seq_x = data_x[s_begin:s_end]
-        seq_x_mark = self.data_stamp[s_begin:s_end]
+        # seq_x_mark = self.data_stamp[s_begin:s_end]
         seq_y = data_y[r_begin:r_end]
-        seq_y_mark = self.data_stamp[r_begin:r_end]
+        # seq_y_mark = self.data_stamp[r_begin:r_end]
 
         if self.neighours:
             self.time_series = seq_x
@@ -493,10 +492,15 @@ class Dataset_ECG(Dataset):
 
             return x_t, X_close, X_distant
 
+        # if self.sampling_range is not None:
+        #     return seq_x, seq_y, seq_x_mark, seq_y_mark, segment
+        # else:
+        #     return seq_x, seq_y, seq_x_mark, seq_y_mark
+        
         if self.sampling_range is not None:
-            return seq_x, seq_y, seq_x_mark, seq_y_mark, segment
+            return seq_x, seq_y, [], [], segment
         else:
-            return seq_x, seq_y, seq_x_mark, seq_y_mark
+            return seq_x, seq_y, [], []
 
     def __len__(self):
         return len(self.data_x) - self.seq_len - self.pred_len + 1
