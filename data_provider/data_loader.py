@@ -498,9 +498,9 @@ class Dataset_ECG(Dataset):
         #     return seq_x, seq_y, seq_x_mark, seq_y_mark
         
         if self.sampling_range is not None:
-            return seq_x, seq_y, [], [], segment
+            return seq_x, seq_y, torch.ones(1), torch.ones(1), segment
         else:
-            return seq_x, seq_y, [], []
+            return seq_x, seq_y, torch.ones(1), torch.ones(1)
 
     def __len__(self):
         return len(self.data_x) - self.seq_len - self.pred_len + 1
