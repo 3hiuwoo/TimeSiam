@@ -396,9 +396,9 @@ class Dataset_ECG(Dataset):
         num_test = len(X_test)
         num_vali = len(X_val)
         raw = np.concatenate([X_train, X_val, X_test], axis=0)
-        target = np.concatenate([y_train[:, 0], y_val[:, 0], y_test[:, 0]], axis=0)
+        # target = np.concatenate([y_train[:, 0], y_val[:, 0], y_test[:, 0]], axis=0)
         df_raw = pd.DataFrame(raw.reshape(raw.shape[0], -1))
-        df_raw['target'] = target
+        # df_raw['target'] = target
         df_raw['date'] = pd.date_range(start='1/1/2018', periods=len(df_raw), freq='H')
         # df_raw = pd.read_csv(os.path.join(self.root_path,
         #                                   self.data_path))
@@ -409,7 +409,7 @@ class Dataset_ECG(Dataset):
         cols = list(df_raw.columns)
         cols.remove(self.target)
         cols.remove('date')
-        df_raw = df_raw[['date'] + cols + [self.target]]
+        df_raw = df_raw[['date'] + cols]
         # num_train = int(len(df_raw) * 0.7)
         # num_test = int(len(df_raw) * 0.2)
         # num_vali = len(df_raw) - num_train - num_test
