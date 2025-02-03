@@ -475,6 +475,7 @@ class Dataset_ECG(Dataset):
             r_begin = s_end - self.label_len
             r_end = r_begin + self.label_len + self.pred_len
 
+        print(s_end-s_begin, r_end-r_begin)
         seq_x = data_x[s_begin:s_end]
         seq_x_mark = self.data_stamp[s_begin:s_end]
         seq_y = data_y[r_begin:r_end]
