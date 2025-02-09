@@ -1,0 +1,39 @@
+{
+    // 使用 IntelliSense 了解相关属性。 
+    // 悬停以查看现有属性的描述。
+    // 欲了解更多信息，请访问: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+
+        {
+            "name": "Python 调试程序: 包含参数的当前文件",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${file}",
+            "console": "integratedTerminal",
+            "args": [
+                "--task_name=timesiam",
+                "--is_training=0",
+                "--root_path=/Users/xiaoyudembp/cmsc/dataset",
+                "--data_path=chapman",
+                "--model_id=chapman",
+                "--model=TCN",
+                "--data=chapman",
+                "--features=M",
+                "--seq_len=300",
+                "--e_layers=1",
+                "--d_layers=1",
+                "--d_model=320",
+                "--d_ff=256",
+                "--n_heads=8",
+                "--patch_len=12",
+                "--stride=12",
+                "--mask_rate=0.25",
+                "--sampling_range=6",
+                "--lineage_tokens=2",
+                "--train_epochs=100",
+                "--batch_size=16"
+            ]
+        }
+    ]
+}

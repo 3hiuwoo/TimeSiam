@@ -5,7 +5,7 @@ mask_rate=0.25
 sampling_range=6
 lineage_tokens=2
 representation_using=avg
-root_path=/root/MCP/dataset
+root_path=/Users/xiaoyudembp/cmsc/dataset
 data_path=chapman
 
 python -u run.py \

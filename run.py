@@ -18,7 +18,7 @@ parser.add_argument('--model', type=str, required=True, default='PatchTST', help
 
 # data loader
 parser.add_argument('--data', type=str, required=True, default='ETTm1', help='dataset type')
-parser.add_argument('--root_path', type=str, default='./datasets', help='root path of the data file')
+parser.add_argument('--root_path', type=str, default='/root/autodl-tmp/dataset', help='root path of the data file')
 parser.add_argument('--data_path', type=str, default='ETTh1.csv', help='data file')
 parser.add_argument('--features', type=str, default='M', help='forecasting task, options:[M, S, MS]; M:multivariate predict multivariate, S:univariate predict univariate, MS:multivariate predict univariate')
 parser.add_argument('--target', type=str, default='OT', help='target feature in S or MS task')
