@@ -5,7 +5,7 @@ mask_rate=0.25
 sampling_range=6
 lineage_tokens=2
 representation_using=avg
-root_path=/Users/xiaoyudembp/cmsc/dataset
+root_path=/root/MCP/dataset
 data_path=chapman
 
 python -u run.py \
@@ -20,8 +20,9 @@ python -u run.py \
     --seq_len $pretrain_seq_len \
     --e_layers 10 \
     --d_layers 1 \
+    --enc_in 12 \
     --d_model 320 \
-    --d_ff 256 \
+    --d_ff 320 \
     --n_heads 8 \
     --patch_len 12 \
     --stride 12 \
@@ -29,4 +30,4 @@ python -u run.py \
     --sampling_range $sampling_range \
     --lineage_tokens $lineage_tokens \
     --train_epochs 100 \
-    --batch_size 16
+    --batch_size 256
